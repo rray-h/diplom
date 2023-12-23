@@ -1,0 +1,42 @@
+/* Имопрт стилей */
+@import "index.css";
+
+/* Общие стили */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Цвет фона */
+body{
+    background-color: #88323F;
+}
+
+/* Стили контейнера */
+.container{
+    margin: 1.5625em 1.5625em;
+    padding: 1.5625em 3.125em;
+    max-width: 1310px;
+    height: 500px;
+    background: linear-gradient(to bottom right,#181619, #1C1A1E);
+}
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: "Limelight-reg";
+    src: url(../font/Limelight-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Literata-reg";
+    src: url(../font/Literata_18pt-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Literata-bold";
+    src: url(../font/Literata_18pt-Bold.ttf);
+    font-weight: bold;
+}

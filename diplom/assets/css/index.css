@@ -1,0 +1,185 @@
+/* Variables */
+:root{
+    --color-text: #FDDBE8;
+    --bg-color: #D85A6F;
+    --first-gradient: #181619;
+    --second-gradient: #1C1A1E;
+}
+
+/* Styles of same elements */
+
+.title{
+    font-family: "Limelight-reg";
+    font-size: 4em;
+    color: var(--color-text);
+    text-align: center;
+}
+
+/* Styles of header */
+.header{
+    padding: 1.5625em 3.125em;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 3.125em;
+}
+
+.nav__logo{
+    width: 180px;
+    height: 80px;
+}
+
+.nav__list{
+    display: flex;
+}
+
+.nav__link{
+    padding: 0.1em 0.625em 0.3em 0.625em;
+    border-radius: 1em;
+    font-size: 1.75em;
+    font-family: "Literata-reg";
+    color: var(--color-text);
+}
+
+.nav__link:hover{
+    background-color: var(--bg-color);
+}
+
+.header__content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.625rem, -14.692rem + 40.85vw, 18.75rem);
+}
+
+.header__title h2{
+    margin-bottom: 0.5em;
+    width: 300px;
+    font-family: "Limelight-reg";
+    color: var(--color-text);
+    font-size: 4em;
+}
+
+.header__title a button{
+    background-color: var(--bg-color);
+    padding: 0.5em 2.4em;
+    border-radius: 1.9em;
+    border: 1px solid var(--bg-color);
+    color: var(--color-text);
+    font-family: "Limelight-reg";
+    font-size: 1.75em;
+    cursor: pointer;
+}
+
+.header__title a button:hover{
+    border: 1px solid var(--bg-color);
+    background: linear-gradient(to bottom right,#181619, #1C1A1E);
+}
+
+.header__media{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.media__pie{
+    width: clamp(9.375rem, 5.335rem + 20.2vw, 21.875rem);
+}
+
+.media{
+    display: flex;
+    flex-direction: column;
+}
+
+.media a{
+    padding: 0.5em 0.5em 0.3em 0.5em;
+    border: 1px solid transparent;
+}
+
+.media a:hover{
+    border: 1px solid var(--bg-color);
+    border-radius: 50%;
+}
+/* --------------------------------- */
+
+/* Styles of section "Categories" */
+
+.categories__body{
+    display: flex;
+    flex-direction: column;
+    gap: 3.125em;
+}
+
+.categories__kinds{
+    display: flex;
+    gap: 1.5625em;
+    justify-content: center;
+}
+
+.categories__kind:hover{
+    opacity: 0.8;
+}
+
+.categories__subtitle{
+    font-family: "Literata-reg";
+    font-size: 2em;
+    color: var(--color-text);
+    text-align: center;
+}
+/* ----------------------------- */
+
+/* Styles of section "Order" */
+
+.order__body{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+.order__window{
+    display: flex;
+    max-width: clamp(1rem, -12.818rem + 69.09vw, 43.75rem);
+    background-color: var(--bg-color);
+}
+
+.order__form{
+    margin: 3.125em 0 0 3.125em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5625em;
+}
+
+input[type="text"], input[type="email"]{
+    padding: 0.5em;
+    width: 300px;
+    height: 40px;
+    background: linear-gradient(to bottom right, var(--first-gradient), var(--second-gradient));
+    font-family: "Literata-reg";
+    color: var(--color-text);
+    font-size: 1.5em;
+    border-radius: 0.6em;
+    border: none;
+    outline: none;
+}
+
+button[type="submit"]{
+    padding: 0.400em 0.625em 0.625em 0.625em;
+    width: clamp(6.25rem, 3.826rem + 12.12vw, 13.75rem);
+    height: 50px;
+    background: linear-gradient(to bottom right, var(--first-gradient), var(--second-gradient));
+    border: 1px solid transparent;
+    border-radius: 2em;
+    color: var(--color-text);
+    font-size: 1.5em;
+    font-family: "Limelight-reg";
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    border: 1px solid #000000;
+    background: transparent;
+    color: #000000;
+}

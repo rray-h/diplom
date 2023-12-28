@@ -1,0 +1,14 @@
+:root{
+    --color-text: #FDDBE8;
+    --bg-color: #D85A6F;
+    --first-gradient: #181619;
+    --second-gradient: #1C1A1E;
+}
+
+.categories__body{
+    margin: 1.5625em 1.5625em;
+    padding: 1.5625em 3.125em;
+    max-width: 1310px;
+    height: 600px;
+    background: linear-gradient(to bottom right,#181619, #1C1A1E);
+}

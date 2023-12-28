@@ -59,7 +59,7 @@
     width: 300px;
     font-family: "Limelight-reg";
     color: var(--color-text);
-    font-size: 4em;
+    font-size: clamp(1.5rem, 0.765rem + 3.67vw, 3.75rem);
 }
 
 .header__title a button{
@@ -85,7 +85,7 @@
 }
 
 .media__pie{
-    width: clamp(9.375rem, 5.335rem + 20.2vw, 21.875rem);
+    width: clamp(3.125rem, -2.997rem + 30.61vw, 21.875rem);
 }
 
 .media{
@@ -102,6 +102,8 @@
     border: 1px solid var(--bg-color);
     border-radius: 50%;
 }
+
+
 /* --------------------------------- */
 
 /* Styles of section "Categories" */
@@ -114,12 +116,21 @@
 
 .categories__kinds{
     display: flex;
-    gap: 1.5625em;
+    flex-wrap: wrap;
+    gap: 1em;
     justify-content: center;
 }
 
 .categories__kind:hover{
     opacity: 0.8;
+}
+
+.categories__title a{
+    color: var(--bg-color);
+}
+
+.categories__title a:hover{
+    text-decoration: underline;
 }
 
 .categories__subtitle{
@@ -152,34 +163,46 @@
     gap: 1.5625em;
 }
 
-input[type="text"], input[type="email"]{
-    padding: 0.5em;
-    width: 300px;
-    height: 40px;
-    background: linear-gradient(to bottom right, var(--first-gradient), var(--second-gradient));
+/* ------------------------------- */
+
+/* Styles of footer */
+
+.mini__container{
+    background: linear-gradient(to bottom right,#181619, #1C1A1E);
+    max-width: 1300px;
+    margin: 1.5625em auto;
+}
+
+.footer__body{
+    display: flex;
+    align-items: center;
+    gap: 3.125em;
+}
+
+.footer__body p{
     font-family: "Literata-reg";
     color: var(--color-text);
     font-size: 1.5em;
-    border-radius: 0.6em;
-    border: none;
-    outline: none;
 }
 
-button[type="submit"]{
-    padding: 0.400em 0.625em 0.625em 0.625em;
-    width: clamp(6.25rem, 3.826rem + 12.12vw, 13.75rem);
-    height: 50px;
-    background: linear-gradient(to bottom right, var(--first-gradient), var(--second-gradient));
+.footer__media{
+    padding: 0.9em 0 0.5em 3.125em;
+    display: flex;
+    gap: 0.9em;
+}
+
+.footer__media a{
+    padding: 0.5em 0.5em 0.3em 0.5em;
     border: 1px solid transparent;
-    border-radius: 2em;
-    color: var(--color-text);
-    font-size: 1.5em;
-    font-family: "Limelight-reg";
-    cursor: pointer;
 }
 
-button[type="submit"]:hover{
-    border: 1px solid #000000;
-    background: transparent;
-    color: #000000;
+.footer__media a:hover{
+    border: 1px solid var(--bg-color);
+    border-radius: 50%;
+}
+
+.footer__contact{
+    margin-left: clamp(0.938rem, -4.879rem + 29.08vw, 18.75rem);
+    display: flex;
+    gap: 3.125em;
 }

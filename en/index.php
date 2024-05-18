@@ -17,11 +17,8 @@
                     <img src="assets/image/logo.png" alt="Logo" />
                 </a>
                 <ul class="header__list">
-                    <a href="#">
-                        <li class="header__link">Home</li>
-                    </a>
-                    <a href="#">
-                        <li class="header__link">Cart</li>
+                    <a href="pages/cart.php">
+                        <li class="header__link cart">Cart</li>
                     </a>
                     <?php
 
@@ -55,7 +52,6 @@
                     <label for="burger-checkbox" class="burger"></label>
                     <ul class="menu-burger-list">
                         <div class="menu-burger-list-item">
-                            <li><a href="#" class="menu-burger-item header__link">Home</a><li>
                             <li><a href="#" class="menu-burger-item header__link">Cart</a><li>
                             <li><a href="#" class="menu-burger-item header__link">Sign In</a><li>
                             <li><a href="#" class="menu-burger-item header__link">Sign Up</a><li>

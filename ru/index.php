@@ -13,14 +13,11 @@
 
         <header class="header">
             <nav class="header__nav">
-                <a href="#" class="header__logo">
+                <a href="index.php" class="header__logo">
                     <img src="assets/image/logo.png" alt="Logo" />
                 </a>
                 <ul class="header__list">
-                    <a href="#">
-                        <li class="header__link">Главная страница</li>
-                    </a>
-                    <a href="#">
+                    <a href="pages/cart.php">
                         <li class="header__link">Корзина</li>
                     </a>
                     <?php
@@ -55,7 +52,6 @@
                     <label for="burger-checkbox" class="burger"></label>
                     <ul class="menu-burger-list">
                         <div class="menu-burger-list-item">
-                            <li><a href="#" class="menu-burger-item header__link">Главная страница</a><li>
                             <li><a href="#" class="menu-burger-item header__link">Корзина</a><li>
                             <li><a href="pages/signUP.php" class="menu-burger-item header__link">Зарегестрироваться</a><li>
                             <li><a href="pages/signIN.php" class="menu-burger-item header__link">Войти</a><li>

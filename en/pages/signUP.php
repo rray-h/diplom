@@ -9,7 +9,10 @@
 </head>
 <body>
     
-    <div class="wrapper sign">
+    <div class="wrapper dark-block">
+        <a href="../index.php" class="home-page">
+            <li>Home</li>
+        </a>
         <div class="sign__body">
             <h1 class="title">Registration</h1>
             <form action="../app/registration.php" method="post" name="signUP-form" class="form form__sign">
@@ -18,6 +21,10 @@
                 <input type="password" name="pass" placeholder="Password" autocomplete="off" />
                 <input type="submit" value="Sign up">
             </form>
+            <div class="sign__or">
+                Or
+                <a href="signIN.php" class="subtitle">Sign in</a>
+            </div>
         </div>
     </div>
 

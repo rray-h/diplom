@@ -53,6 +53,29 @@ html {
     color: var(--color-text);
     text-align: center;
 }
+.subtitle{
+    font-family: "Literata-b";
+    color: var(--color-text);
+    opacity: 0.3;
+    font-size: 24px;
+}
+.dark-block{
+    height: 679px;
+    background: var(--bg-block);
+}
+.home-page{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.home-page li{
+    font-family: "Literata-b";
+    color: var(--color-text);
+    font-size: 28px;
+}
+.home-page li:hover{
+    text-decoration: underline;
+}
 /* ---------- */
 
 /* Header styles */
@@ -76,6 +99,9 @@ html {
 .header__list{
     display: flex;
     gap: 20px;
+}
+.header__list a:nth-child(1){
+    margin: 0 30px 0 0;
 }
 .header__link{
     font-family: "Literata-b";
@@ -251,10 +277,6 @@ input[type="text"], input[type="email"], input[type="password"]{
 /* ---------- */
 
 /* Sign-IN-UP styles */
-.sign{
-    height: 679px;
-    background: var(--bg-block);
-}
 .form__sign{
     padding: 50px 0 50px 0;
 }
@@ -263,6 +285,14 @@ input[type="text"], input[type="email"], input[type="password"]{
 }
 .form__sign input[type="submit"]{
     padding: 15px 30px;
+}
+.sign__or{
+    text-align: center;
+    color: var(--color-text);
+    font-size: 24px;
+}
+.sign__or a:hover{
+    text-decoration: underline;
 }
 /* ---------- */
 
@@ -275,53 +305,28 @@ input[type="text"], input[type="email"], input[type="password"]{
     display: flex;
     justify-content: space-around;
     align-items: top;
+    flex-wrap: wrap;
 }
-.profile__photo form{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-}
-.profile__photo-block{
-    width: 365px;
-    height: 365px;
-    border: 20px solid var(--bg-color);
-    border-radius: 50%;
-}
-.profile__photo-block input[type="file"]{
-    display: block;
-    width: 115px;
-    margin: 150px auto 0 auto;
-    cursor: pointer;
-}
-.profile__photo input[type="submit"]{
-    margin: 0 0 0 130px;
-    background: transparent;
-    border: none;
-    font-family: "Literata-b";
-    font-size: 16px;
-    color: var(--color-text);
-    cursor: pointer;
+.profile__info-block{
+    margin: 40px 0 0 0;
 }
 .profile__info-block:not(:last-child){
     margin-bottom: 30px;
-}
-.profile__info-block h3{
-    font-family: "Literata-b";
-    color: var(--color-text);
-    opacity: 0.3;
-    font-size: 24px;
 }
 .profile__info-block h2{
     font-family: "Literata-b";
     color: var(--color-text);
     font-size: 36px;
 }
-.profile__history h2{
-    margin-bottom: 20px;
+.profile__history{
+    margin: 20px 0 20px 0;
     font-family: "Literata-b";
     font-size: 32px;
+    text-align: center;
     color: var(--color-text);
+}
+.profile__history h3{
+    margin: 15px;
 }
 .profile__history-block{
     width: 340px;
@@ -332,23 +337,52 @@ input[type="text"], input[type="email"], input[type="password"]{
 .form__change input[type="submit"]:hover{
     text-decoration: underline;
 }
-.logout{
-    background: none;
-    border: none;
-    color: var(--color-text);
-    font-family: "Literata-b";
-    font-size: 32px;
-    cursor: pointer;
-}
-.form__logout input[type="submit"]:hover{
+.logout:hover{
     text-decoration: underline;
 }
 /* ---------- */
+
+/* Cart styles */
+.cart__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cart__items{
+    width: 500px;
+    height: 300px;
+    background: var(--bg-color);
+}
+.cart__nav{
+    margin: 30px 0 0 0;
+    display: flex;
+    gap: 50px;
+}
+.cart__btn{
+    border: 1px solid var(--color-text);
+    background-color: var(--color-text);
+    padding: 10px 50px;
+    border-radius: 10px;
+    color: var(--bg-block);
+    font-family: "Literata-r";
+    font-size: 24px;
+}
+.cart__btn:hover{
+    background-color: var(--bg-block);
+    color: var(--color-text);
+}
+
+/* ---------- */
+
 
 /* Media query */
 @media (max-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
 @media (max-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
 @media (max-width:641px)  {
+    .change-lang{
+        top: 55px;
+        right: 90px;
+    }
     .header__nav{
         justify-content: space-between;
     }

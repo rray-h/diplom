@@ -9,7 +9,10 @@
 </head>
 <body>
     
-    <div class="wrapper sign">
+    <div class="wrapper dark-block">
+        <a href="../index.php" class="home-page">
+            <li>Главная страница</li>
+        </a>
         <div class="sign__body">
             <h1 class="title">Авторизация</h1>
             <form action="../app/login.php" method="post" name="signIN-form" class="form form__sign">
@@ -17,6 +20,10 @@
                 <input type="password" name="pass" placeholder="Пароль" autocomplete="off" />
                 <input type="submit" value="Войти">
             </form>
+            <div class="sign__or">
+                Или
+                <a href="signUP.php" class="subtitle">Зарегестрироваться</a>
+            </div>
         </div>
     </div>
 

@@ -12,17 +12,9 @@
     <div class="wrapper profile">
 
         <div class="profile__content">
-            <div class="profile__photo">
-                <form enctype="multipart/form-data" action="ava.php" class="form__change " method="post">
-                    <label class="profile__photo-block">
-                        <input type="file" name="filename">
-                        <input type=submit value="Upload">
-                    </label>    
-                </form>
-            </div>
             <div class="profile__info">
                 <div class="profile__info-block">
-                    <h3>Username</h3>
+                    <h3 class="subtitle">Username</h3>
                     <?php
 
                     include("../app/connect.php");
@@ -40,7 +32,7 @@
                     ?>
                 </div>
                 <div class="profile__info-block">
-                    <h3>E-mail</h3>
+                    <h3 class="subtitle">E-mail</h3>
                     <?php
 
                     include("../app/connect.php");
@@ -58,9 +50,9 @@
                 </div>
             </div>
             <div class="profile__history">
-                <h2>History of order</h2>
+                <h3 class="subtitle">History of order</h2>
                 <div class="profile__history-block"></div>
-                    <a class="logout" href="../app/logout.php">Log out</a>
+                <a class="logout subtitle" href="../app/logout.php">Log out</a>
             </div>
         </div>
 

@@ -21,10 +21,7 @@ include('connect.php');
         $params = array($username, $email, $password__hash);
         $stmt = sqlsrv_query($connection, $sql, $params) or die(print_r(sqlsrv_errors(), true));
 
-        session_start();
-        $_SESSION['name'] = $data['Username'];
-        $_SESSION['email'] = $data['Email'];
-        header("Location: ../index.php");
+        header("Location: ../pages/signIN.php");
         exit();    
         
     

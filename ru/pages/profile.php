@@ -12,28 +12,9 @@
     <div class="wrapper profile">
 
         <div class="profile__content">
-            <div class="profile__photo">
-                <?php
-                if ($_FILES && $_FILES["filename"]["error"]== UPLOAD_ERR_OK)
-                {
-                    $name = "../avatar/" . $_FILES["filename"]["name"];
-                    move_uploaded_file($_FILES["filename"]["tmp_name"], $name);
-                    echo "<script> console.log('File is loaded') </script>";
-                    echo `<label class='profile__photo-block'>
-                            <img src=$name alt='avatar' />
-                          </label>`;
-                }
-                ?>
-                <form enctype="multipart/form-data" class="form__change" method="post">
-                    <label class="profile__photo-block input-file">
-                        <input type="file" name="filename">
-                        <span>Выеберите файл</span>
-                    </label>    
-                </form>
-            </div>
             <div class="profile__info">
                 <div class="profile__info-block">
-                    <h3>Имя пользователя</h3>
+                    <h3 class="subtitle">Имя пользователя</h3>
                     <?php
 
                     include("../app/connect.php");
@@ -51,7 +32,7 @@
                     ?>
                 </div>
                 <div class="profile__info-block">
-                    <h3>E-mail</h3>
+                    <h3 class="subtitle">E-mail</h3>
                     <?php
 
                     include("../app/connect.php");
@@ -69,9 +50,9 @@
                 </div>
             </div>
             <div class="profile__history">
-                <h2>История заказов</h2>
+                <h3 class="subtitle">История заказов</h2>
                 <div class="profile__history-block"></div>
-                    <a class="logout" href="../app/logout.php">Выйти</a>
+                <a class="logout subtitle" href="../app/logout.php">Выйти из профиля</a>
             </div>
         </div>
 

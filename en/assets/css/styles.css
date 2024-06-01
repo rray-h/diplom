@@ -1,14 +1,10 @@
-/* ---------- */
-
-/* Variables */
-:root{
-    --bg-color: #88323F;
-    --bg-block: linear-gradient(to bottom right, #181619, #2E2D2F); 
-    --bg-burger: linear-gradient(to bottom right, #181619, #302F31);
-    --bg-elements: #D85A6F;
-    --color-text: #FDDBE8;
-}
-/* ---------- */
+@import url("variables.css");
+@import url("common-styles.css");
+@import url("index.css");
+@import url("signUP-IN.css");
+@import url("profile.css");
+@import url("cart.css");
+@import url("categories.css");
 
 /* Null styles */
 *{
@@ -35,78 +31,7 @@ html {
 }
 /* ---------- */
 
-/* Common styles */
-.wrapper{
-    padding: 15px;
-    background-color: var(--bg-color);
-}
-.block{
-    background: var(--bg-block);
-    margin: 15px 0;
-    padding: 0 clamp(0.625rem, -0.729rem + 4.51vw, 3.125rem) 50px clamp(0.625rem, -0.729rem + 4.51vw, 3.125rem);
-}
-.title{
-    padding: 20px 0 20px 0;
-    margin: 0 0 20px 0;
-    font-family: "Limelight";
-    font-size: clamp(3.125rem, 2.934rem + 0.96vw, 3.75rem);
-    color: var(--color-text);
-    text-align: center;
-}
-.subtitle{
-    font-family: "Literata-b";
-    color: var(--color-text);
-    opacity: 0.3;
-    font-size: 24px;
-}
-.dark-block{
-    height: 100vh;
-    background: var(--bg-block);
-}
-.home-page li{
-    font-family: "Literata-b";
-    color: var(--color-text);
-    font-size: 28px;
-    text-align: center;
-}
-.home-page li:hover{
-    text-decoration: underline;
-}
-/* ---------- */
-
-/* Header styles */
-.header{
-    background: var(--bg-block);
-    padding: 25px clamp(0.625rem, -0.729rem + 4.51vw, 3.125rem) 50px clamp(0.625rem, -0.729rem + 4.51vw, 3.125rem);
-}
-.header__nav{
-    display: flex;
-    align-items: center;
-    gap: clamp(1.25rem, -0.443rem + 5.64vw, 4.375rem);
-}
-.menu-burger{
-    width: 50px;
-    height: 50px;
-    display: none;
-}
-.header__logo{
-    padding-top: 10px;
-}
-.header__list{
-    display: flex;
-    gap: 20px;
-}
-.header__list a:nth-child(1){
-    margin: 0 30px 0 0;
-}
-.header__link{
-    font-family: "Literata-b";
-    color: var(--color-text);
-    font-size: 28px;
-}
-.header__link:hover{
-    text-decoration: underline;
-}
+/* Change lang styles */
 .change-lang{
     position: absolute;
     top: 30px;
@@ -127,248 +52,6 @@ html {
     background-color: var(--color-text);
     color: var(--bg-color);
 }
-.header__content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(1.25rem, -3.49rem + 15.8vw, 10rem);
-}
-.header__caption{
-    display: flex;
-    flex-direction: column;
-}
-.header__title{
-    margin-bottom: clamp(0.625rem, -0.391rem + 3.39vw, 2.5rem);
-    width: 300px;
-    font-family: "Limelight";
-    font-size: clamp(3.125rem, 2.934rem + 0.96vw, 3.75rem);
-    color: var(--color-text);
-}
-.header__btn{
-    max-width: 200px;
-    padding: clamp(0.5rem, 0.462rem + 0.19vw, 0.625rem) clamp(1.25rem, 1.059rem + 0.96vw, 1.875rem);
-    font-family: "Limelight";
-    font-size: clamp(1.5rem, 1.424rem + 0.38vw, 1.75rem);
-    color: var(--color-text);
-    background-color: var(--bg-elements);
-    border: 1px solid transparent;
-    border-radius: 30px;
-    cursor: pointer;
-}
-.header__btn:hover{
-    border: 1px solid var(--bg-elements);
-    background-color: transparent;
-}
-.header__media{
-    display: flex;
-    align-items: center;
-    gap: clamp(0.625rem, -0.729rem + 4.51vw, 3.125rem);
-}
-.header__socnet{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-/* ---------- */
-
-/* Categories styles */
-.categories__title a{
-    color: var(--bg-elements);
-}
-.categories__title a:hover{
-    text-decoration: underline;
-}
-.categories__kinds{
-    display: flex;
-    justify-content: center;
-    gap: 25px;     
-    flex-wrap: wrap;
-}
-.categories__kind{
-    display: flex;
-    flex-direction: column;
-}
-.categories__kind a{
-    margin-top: 15px;
-    text-align: center;
-    font-family: "Literata-r";
-    font-size: 24px;
-    color: var(--color-text);
-}
-.categories__kind a:hover{
-    text-decoration: underline;
-}
-/* ---------- */
-
-/* Order styles */
-.form{
-    padding: 30px 15px 15px 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--bg-color);
-    border-radius: 15px;
-    width: clamp(15.625rem, 10.845rem + 23.9vw, 31.25rem);
-    margin: 0 auto;
-}
-.order__form label{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    color: var(--color-text);
-    font-family: "Literata-r";
-    font-size: 24px;
-}
-input[type="text"], input[type="email"], input[type="password"]{
-    padding: 10px 30px;
-    margin: 0 0 25px 0;
-    background-color: var(--color-text);
-    font-family: "Literata-r";
-    font-size: clamp(0.75rem, 0.521rem + 1.15vw, 1.5rem);
-    color: var(--bg-color);
-    border-radius: 10px;
-    border: none;
-    outline: none;
-}
-
-.form input[type="submit"]{
-    padding: 10px 30px;
-    background-color: var(--color-text);
-    color: var(--bg-color);
-    border: 1px solid transparent;
-    border-radius: 10px;
-    font-family: "Limelight";
-    font-size: clamp(1rem, 0.847rem + 0.76vw, 1.5rem);
-    cursor: pointer;
-}
-.form input[type="submit"]:hover{
-    background-color: var(--bg-color);
-    border: 1px solid var(--color-text);
-    color: var(--color-text);
-}
-/* ---------- */
-
-/* Footer styles */
-.footer{
-    padding: 15px 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--bg-block);
-}
-.footer__media{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.footer__media p{
-    font-family: "Literata-r";
-    font-size: 24px;
-    color: var(--color-text);
-}
-.footer h3{
-    font-family: "Literata-r";
-    font-size: 24px;
-    color: var(--color-text);
-}
-/* ---------- */
-
-/* Sign-IN-UP styles */
-.form__sign{
-    padding: 40px 0 40px 0;
-}
-.form__sign input[type="text"], input[type="email"], input[type="password"]{
-    padding: 20px 30px;
-}
-.form__sign input[type="submit"]{
-    padding: 15px 30px;
-}
-.sign__or{
-    text-align: center;
-    color: var(--color-text);
-    font-size: 24px;
-}
-.sign__or a:hover{
-    text-decoration: underline;
-}
-/* ---------- */
-
-/* Profile styles */
-.profile{
-    padding: 111.5px 0;
-    background: var(--bg-block);
-}
-.profile__content{
-    display: flex;
-    justify-content: space-around;
-    align-items: top;
-    flex-wrap: wrap;
-}
-.profile__info-block{
-    margin: 40px 0 0 0;
-}
-.profile__info-block:not(:last-child){
-    margin-bottom: 30px;
-}
-.profile__info-block h2{
-    font-family: "Literata-b";
-    color: var(--color-text);
-    font-size: 36px;
-}
-.profile__history{
-    margin: 20px 0 20px 0;
-    font-family: "Literata-b";
-    font-size: 32px;
-    text-align: center;
-    color: var(--color-text);
-}
-.profile__history h3{
-    margin: 15px;
-}
-.profile__history-block{
-    width: 340px;
-    height: 340px;
-    background: var(--bg-color);
-    border-radius: 15px;
-} 
-.form__change input[type="submit"]:hover{
-    text-decoration: underline;
-}
-.logout:hover{
-    text-decoration: underline;
-}
-/* ---------- */
-
-/* Cart styles */
-.cart__content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.cart__items{
-    width: 500px;
-    height: 300px;
-    background: var(--bg-color);
-}
-.cart__nav{
-    margin: 30px 0 0 0;
-    display: flex;
-    gap: 50px;
-}
-.cart__btn{
-    border: 1px solid var(--color-text);
-    background-color: var(--color-text);
-    padding: 10px 50px;
-    border-radius: 10px;
-    color: var(--bg-block);
-    font-family: "Literata-r";
-    font-size: 24px;
-}
-.cart__btn:hover{
-    background-color: var(--bg-block);
-    color: var(--color-text);
-}
-
 /* ---------- */
 
 
@@ -468,13 +151,11 @@ input[type="text"], input[type="email"], input[type="password"]{
     .burger-checkbox:checked ~ .menu-burger-list {
         transform: translateX(0);
     }    
-    .burger-media{
+    .menu-burger-media{
         display: flex;
         justify-content: space-between;
         padding: 0 30px 0 30px;
     }
-
-
     .footer__media p{
         display: none;
     }
@@ -494,7 +175,7 @@ input[type="text"], input[type="email"], input[type="password"]{
     .header__title{
         text-align: center;
     }
-    .header__socnet{
+    .header__media-items{
         flex-direction: row;
     }
     .cupcake{

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candy</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="shortcut icon" href="assets/image/icon.svg">
+    <link rel="shortcut icon" href="assets/image/logo.webp">
 </head>
 <body>
 
@@ -18,12 +22,11 @@
                 </a>
                 <ul class="header__list">
                     <a href="pages/cart.php">
-                        <li class="header__link cart">Cart</li>
+                        <li class="header__link">Cart</li>
                     </a>
                     <?php
 
-                    $sessionName = session_name();
-                    if(isset($_COOKIE[$sessionName]) || isset($_REQUEST[$sessionName])) {
+                    if(isset($_SESSION['email'])) {
                         echo '
                         <a href="pages/profile.php">
                             <li class="header__link">Profile</li>
@@ -34,7 +37,7 @@
                         <a href="pages/signIN.php">
                             <li class="header__link">Sign In</li>
                         </a>
-                        <li class="header__link">/</li>
+                        <li class="header__splash">/</li>
                         <a href="pages/signUP.php">
                             <li class="header__link">Sign Up</li>
                         </a>';
@@ -57,16 +60,16 @@
                             <li><a href="pages/signUP.php" class="menu-burger-item header__link">Sign Up</a><li>
 
                         </div>
-                        <div class="burger-media">
+                        <div class="menu-burger-media">
                             <div>
-                                <a href="#" class="header__link">
-                                <img src="assets/image/telegram-w.png" alt="telegram" />
+                                <a href="#" class="menu-burger-list-item">
+                                    <img src="assets/image/telegram-w.png" alt="telegram" />
                                 </a>
-                                <a href="#" class="header__link">
-                                <img src="assets/image/vk-w.png" alt="telegram" />
+                                <a href="#" class="menu-burger-list-item">
+                                    <img src="assets/image/vk-w.png" alt="telegram" />
                                 </a>
-                                <a href="#" class="header__link">
-                                <img src="assets/image/instagram-w.png" alt="telegram" />
+                                <a href="#" class="menu-burger-list-item">
+                                    <img src="assets/image/instagram-w.png" alt="telegram" />
                                 </a>
                             </div>
                             <div>
@@ -84,11 +87,10 @@
                     <h1 class="header__title">
                         Delicious cakes
                     </h1>
-                    <a href="#" class="header__btn">Buy now</a>    
                 </div>
                 <div class="header__media">
-                    <img class="cupcake" src="assets/image/cupcake.png" alt="Cupcake" />
-                    <div class="header__socnet">
+                    <img class="cupcake" src="assets/image/logo.webp" alt="Cupcake" />
+                    <div class="header__media-items">
                         <a href="#">
                             <img src="assets/image/telegram.png" alt="telegram" />
                         </a>
@@ -103,38 +105,39 @@
             </div>
         </header>
 
-        <section class="categories block">
-            <div class="categories__body">
-                <h2 class="categories__title title">
-                    Popular <a href="#">categories</a>
+        <section class="popular block">
+            <div class="popular__body">
+                <h2 class="popular__title title">
+                    Popular <a href="pages/categories.php">categories</a>
                 </h2>
-                <div class="categories__kinds">
-                    <div class="categories__kind">
-                        <img src="assets/image/Birthday.png" alt="Birthday" />
-                        <a href="#">Birthday cakes</a>
-                    </div>
-                    <div class="categories__kind">
-                        <img src="assets/image/Wedding.png" alt="Wedding" />
-                        <a href="#">Wedding cakes</a>
-                    </div>
-                    <div class="categories__kind">
-                        <img src="assets/image/Diet.png" alt="Diet" />
-                        <a href="#">Diet cakes</a>
-                    </div>
-                    <div class="categories__kind">
-                        <img src="assets/image/Bento.png" alt="Bento">
-                        <a href="#">Bento cakes</a>
-                    </div>
+                <div class="popular__list">
+                    <?php
+
+                    include ('app/connect.php');
+
+                    $sql = "SELECT TOP 4 * FROM Categories";
+                    $stmt = sqlsrv_query($connection, $sql) or die(print_r(sqlsrv_errors(), true));
+                   
+                    while( $data = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)){
+                        echo '
+                        <div class="popular__item">
+                            <a href="pages/products.php?CategoryID=' . $data['CategoryID'] . '"><img src="' . $data['CategoryImage'] . '" alt="Bento"></a>
+                            <a href="#">' . $data['CategoryName'] . ' cakes</a>
+                        </div>';                        
+                        
+                    }
+
+                    ?>
                 </div>
             </div>
         </section>
 
         <section class="order block">
             <div class="order__body">
-                <div class="order__title title">
-                    Make a cake to order
-                </div>
-                <form action="app/send-order.php" method="post" class="form">                        
+                <form action="app/send-order.php" method="post" class="form">     
+                    <div class="order__title title">
+                        <span>Make a order</span> <br/> CAKE
+                    </div>
                     <input type="text" name="name" placeholder="Type your name" autocomplete="off" required/>                   
                     <input type="text" name="surname" placeholder="Type your surname" autocomplete="off" required/>                       
                     <input type="text" name="email" placeholder="Type your e-mail" autocomplete="off" required/>
@@ -154,11 +157,11 @@
                 <a href="#">
                     <img src="assets/image/instagram.png" alt="instagram" />
                 </a>
-                <a>
-                    <p>candy@gmail.com</p>
-                </a>
+                <a href="#"> candy@gmail.com </a>
             </div>
-            <h3>FAQ</h3>
+            <h3>
+                <a href="3">FAQ</a>    
+            </h3>
         </footer>
 
     </div>

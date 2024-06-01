@@ -1,0 +1,77 @@
+/* Imports */
+@import url("variables.css");
+/* ---------- */
+
+/* Common styles */
+.wrapper{
+    background: var(--bg-color);
+    max-width: 100vw;
+}
+.block{
+    background: var(--bg-block);
+    margin: 5px 0;
+    padding: 0 clamp(0.625rem, -0.729rem + 4.51vw, 3.125rem) 50px clamp(0.625rem, -0.729rem + 4.51vw, 3.125rem);
+}
+.title{
+    padding: 20px 0 20px 0;
+    margin: 0 0 20px 0;
+    font-family: "Limelight";
+    font-size: clamp(3.125rem, 2.934rem + 0.96vw, 3.75rem);
+    color: var(--color-text);
+    text-align: center;
+}
+.subtitle{
+    font-family: "Literata-b";
+    color: var(--color-text);
+    opacity: 0.3;
+    font-size: 24px;
+}
+.dark-block{
+    padding: 0 0 15px 0;
+    height: 100%;
+    background: var(--bg-block);
+}
+.home-page li{
+    padding: 15px 0 0 0;
+    font-family: "Literata-b";
+    color: var(--color-text);
+    font-size: 28px;
+    text-align: center;
+}
+.home-page li:hover{
+    text-decoration: underline;
+}
+.error {
+    margin: 0 0 15px 0;
+    font-family: "Literata-r";
+    font-size: 24px;
+    color: var(--bg-color);
+}
+.add-to-cart{
+    background: var(--color-text);
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: "Literata-r";
+
+}
+.add-to-cart:hover{
+    background: transparent;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+}
+.remove-from-cart {
+    background: var(--color-text);
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: "Literata-r";
+}
+.remove-from-cart:hover{
+    background: transparent;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+}
+/* ---------- */

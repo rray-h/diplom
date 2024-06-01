@@ -7,12 +7,12 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories</title>
+    <title>Bento</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="shortcut icon" href="../assets/image/logo.webp">
+
 </head>
 <body>
-    
     <div class="wrapper">
 
         <div class="categories">
@@ -80,20 +80,42 @@ session_start();
                     <?php
 
                     include ('../app/connect.php');
+            
 
-                    $sql = "SELECT * FROM Categories";
-                    $stmt = sqlsrv_query($connection, $sql) or die(print_r(sqlsrv_errors(), true));
-
-                    while( $data = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)){
-                        echo '
-                        <div class="categories__item">
-                            <a href="products.php?CategoryID=' . $data['CategoryID'] . '"><img src="../' . $data['CategoryImage'] . '" alt="' . $data['CategoryName'] . '"></a>
-                            <a href="#">' . $data['CategoryName'] . ' cakes</a>
-                        </div>';                        
+                    if (isset($_GET['CategoryID'])) {
+                        $selectedCategoryId = $_GET['CategoryID'];
+                    
                         
-                    }
+                        $sqlProducts = "SELECT * FROM Products WHERE CategoryID = ?";
+                        $params = array($selectedCategoryId);
+                        $stmtProducts = sqlsrv_query($connection, $sqlProducts, $params);
+                    
+                        if ($stmtProducts === false) {
+                            die(print_r(sqlsrv_errors(), true));
+                        }
+                        } else {
+                            die("Не выбрана категория.");
+                        }
+
+                        if($stmtProducts){
+                            while( $data = sqlsrv_fetch_array($stmtProducts, SQLSRV_FETCH_ASSOC)){
+                                echo '
+                                <div class="categories__item-cart">
+                                    <img src="../' . $data['ProductImage'] . '" alt="' . $data['ProductName'] . '" /></a>
+                                        <form method="post" action="../app/add-to-cart.php">
+                                            <a href="#">' . $data['ProductName'] . '</a>
+                                            <input type="hidden" name="ProductID" value="' . $data['ProductID'] . '" />
+                                            <input type="submit" class="add-to-cart" name="add_to_cart" value="Add to cart">
+                                        </form>
+                                </div>';                        
+                                
+                            }    
+                        }
+
+                    
 
                     ?>
+
                 </div>
             </div>
         </div>

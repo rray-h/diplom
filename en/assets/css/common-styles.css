@@ -22,9 +22,9 @@
 }
 .subtitle{
     font-family: "Literata-b";
-    color: var(--color-text);
-    opacity: 0.3;
+    color: #979797;
     font-size: 24px;
+    z-index: 0;
 }
 .dark-block{
     padding: 0 0 15px 0;
@@ -34,7 +34,7 @@
 .home-page li{
     padding: 15px 0 0 0;
     font-family: "Literata-b";
-    color: var(--color-text);
+    color: #979797;
     font-size: 28px;
     text-align: center;
 }

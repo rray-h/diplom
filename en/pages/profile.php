@@ -17,13 +17,13 @@
                         <li class="header__link">Cart</li>
                     </a>
                     <a href="../index.php">
-                            <li class="header__link">Home</li>
+                        <li class="header__link">Home</li>
                     </a>
                 </ul>
                 <div class="menu-burger">
                     <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
-                    <label for="burger-checkbox" class="burger"></label>
-                    <ul class="menu-burger-list">
+                    <label for="burger-checkbox" class="burger" id="menu-burger"></label>
+                    <ul class="menu-burger-list" id="menu-burger-list">
                         <div class="menu-burger-list-item">
                             <li><a href="cart.php" class="menu-burger-item header__link">Cart</a><li>
                             <li><a href="../index.php" class="menu-burger-item header__link">Home</a><li>
@@ -31,13 +31,10 @@
                         <div class="menu-burger-media">
                             <div>
                                 <a href="#" class="menu-burger-list-item">
-                                    <img src="assets/image/telegram-w.png" alt="telegram" />
+                                    <img src="../assets/image/telegram-w.png" alt="telegram" />
                                 </a>
                                 <a href="#" class="menu-burger-list-item">
-                                    <img src="assets/image/vk-w.png" alt="telegram" />
-                                </a>
-                                <a href="#" class="menu-burger-list-item">
-                                    <img src="assets/image/instagram-w.png" alt="telegram" />
+                                    <img src="../assets/image/vk-w.png" alt="vk" />
                                 </a>
                             </div>
                             <div>
@@ -65,7 +62,7 @@
 
                         $sessionName = session_name();
                         if(isset($_COOKIE[$sessionName]) || isset($_REQUEST[$sessionName])) {
-                            echo "<h2>" . $_SESSION['name'] . "</h2>";
+                            echo "<h2>" . $_SESSION['nam'] . "</h2>";
                         }
 
                         ?>
@@ -82,7 +79,7 @@
 
                         $sessionName = session_name();
                         if(isset($_COOKIE[$sessionName]) || isset($_REQUEST[$sessionName])) {
-                            echo "<h2>" . $_SESSION['email'] . "</h2>";
+                            echo "<h2>" . $_SESSION['emai'] . "</h2>";
                         }
 
                         ?>
@@ -96,6 +93,7 @@
             </div>
         </div>                
     </div>
+    <script src="../assets/js/script.js"></script>
 
 </body>
 </html>

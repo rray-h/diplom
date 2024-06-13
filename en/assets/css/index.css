@@ -56,11 +56,13 @@
     flex-direction: column;
 }
 .header__title{
-    margin-bottom: clamp(0.625rem, -0.391rem + 3.39vw, 2.5rem);
-    width: 300px;
+    margin-bottom: clamp(4.925rem, -0.391rem + 3.39vw, 2.5rem);
+    max-width: 300px;
     font-family: "Limelight";
-    font-size: clamp(5.125rem, 2.934rem + 0.96vw, 3.75rem);
+    font-size: clamp(4.125rem, 2.934rem + 0.96vw, 3.75rem);
     color: var(--color-text);
+    text-align: center;
+
 }
 .header__btn{
     max-width: 170px;

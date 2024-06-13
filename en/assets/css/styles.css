@@ -29,6 +29,9 @@ html {
     ::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
+.no-scroll{
+    overflow: hidden;
+}
 /* ---------- */
 
 /* Change lang styles */
@@ -58,7 +61,22 @@ html {
 /* Media query */
 @media (max-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
 @media (max-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
-@media (max-width:641px)  {
+@media (max-width:641px)  {}
+@media (max-width:961px)  { 
+    .header__content{
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+    }
+    .header__caption{
+        align-items: center;
+    }
+    .header__media{
+        flex-direction: column;
+    }
+    .header__media-items{
+        flex-direction: row;
+    } 
     .change-lang{
         top: 55px;
         right: 90px;
@@ -75,9 +93,13 @@ html {
     }
     .menu-burger{
         display: block;
+        position: fixed;
+        top: 44px;
+        right: 15px;
     }
     .burger {
         position: relative;
+        top: 14px;
         z-index: 1;
         cursor: pointer;
         display: block;
@@ -119,9 +141,12 @@ html {
         transition: bottom .3s, transform .3s .15s;
     }
     .menu-burger-list {
+        display: none;
+    }
+    .menu-burger-list.active{
         top: 0;
         right: 0;
-        position: absolute;
+        position: fixed;
         display: flex;
         gap: 300px;
         flex-direction: column;
@@ -132,7 +157,6 @@ html {
         transition: .3s;
         width: 100%;
         height: 100%;
-        
     }
     .menu-burger-item{
         display: block;
@@ -156,31 +180,10 @@ html {
         justify-content: space-between;
         padding: 0 30px 0 30px;
     }
-    .footer__media p{
+    .footer__media img{
         display: none;
     }
-    .footer{
-        flex-direction: column;
-    }
-    
-}
-@media (max-width:961px)  { 
-    .header__content{
-        flex-direction: column;
-        align-items: center;
-    }
-    .header__caption{
-        align-items: center;
-    }
-    .header__title{
-        text-align: center;
-    }
-    .header__media-items{
-        flex-direction: row;
-    }
-    .cupcake{
-        display: none;
-    }  
+
 }
 @media (max-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 @media (max-width:1281px) { /* hi-res laptops and desktops */ }

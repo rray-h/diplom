@@ -52,12 +52,23 @@ session_start();
                 </div>
                 <div class="menu-burger">
                     <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
-                    <label for="burger-checkbox" class="burger"></label>
-                    <ul class="menu-burger-list">
+                    <label for="burger-checkbox" class="burger" id="menu-burger"></label>
+                    <ul class="menu-burger-list" id="menu-burger-list">
                         <div class="menu-burger-list-item">
                             <li><a href="pages/cart.php" class="menu-burger-item header__link">Cart</a><li>
-                            <li><a href="pages/signIN.php" class="menu-burger-item header__link">Sign In</a><li>
-                            <li><a href="pages/signUP.php" class="menu-burger-item header__link">Sign Up</a><li>
+                            <?php
+
+                            if(isset($_SESSION['email'])) {
+                                echo '
+                                    <li><a href="pages/profile.php"  class="menu-burger-item header__link">Profile</a></li>';
+                            }
+                            else{
+                                echo '
+                                    <li><a href="pages/signIN.php" class="menu-burger-item header__link">Sign In</a></li>
+                                    <li><a href="pages/signUP.php" class="menu-burger-item header__link">Sign Up</a></li>';
+                            }
+                            
+                            ?>
 
                         </div>
                         <div class="menu-burger-media">
@@ -66,10 +77,7 @@ session_start();
                                     <img src="assets/image/telegram-w.png" alt="telegram" />
                                 </a>
                                 <a href="#" class="menu-burger-list-item">
-                                    <img src="assets/image/vk-w.png" alt="telegram" />
-                                </a>
-                                <a href="#" class="menu-burger-list-item">
-                                    <img src="assets/image/instagram-w.png" alt="telegram" />
+                                    <img src="assets/image/vk-w.png" alt="vk" />
                                 </a>
                             </div>
                             <div>
@@ -96,9 +104,6 @@ session_start();
                         </a>
                         <a href="#">
                             <img src="assets/image/vk.png" alt="vk" />
-                        </a>
-                        <a href="#">
-                            <img src="assets/image/instagram.png" alt="instagram" />
                         </a>
                     </div>
                 </div>

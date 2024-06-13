@@ -1,0 +1,74 @@
+/* Imports */
+@import url("variables.css");
+/* ---------- */
+
+/* Categories page styles */
+
+.categories{
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-block);
+}
+.categories__list{
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.categories__item{
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.categories__item img{
+    max-width: 400px;
+    border-radius: 15px;
+}
+.categories__item a{
+    margin-top: 15px;
+    text-align: center;
+    font-family: "Literata-r";
+    font-size: 24px;
+    color: var(--color-text);
+}
+.categories__item a:hover{
+    text-decoration: underline;
+}
+.categories__item-cart{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.categories__item-cart form{
+    margin: 15px 0;
+}
+.categories__item-cart img{
+    max-width: 350px;
+    border-radius: 15px;
+}
+.categories__item-cart a{
+    margin-top: 15px;
+    font-family: "Literata-r";
+    font-size: 24px;
+    color: var(--color-text);
+}
+
+.categories__item-cart-add{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.categories__item-cart-add a{
+    padding: 0 0 15px 0;
+}
+.categories__item-cart-add img{
+    max-width: 40px;
+}
+/* ---------- */

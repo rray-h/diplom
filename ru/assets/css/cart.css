@@ -1,0 +1,46 @@
+/* Imports */
+@import url("variables.css");
+/* ---------- */
+
+/* Cart styles */
+.cart{
+    height: 100vh;
+    background: var(--bg-block);
+}
+.cart__content{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.cart nav{
+    padding: 15px 0 0 0;
+}
+.cart__items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 400px;
+    background: var(--bg-color);
+    color: var(--color-text);
+    font-family: "Literata-r";
+    padding: 15px 30px;
+    margin: 15px 0;
+}
+.cart__nav{
+    display: flex;
+    justify-content: space-around;
+}
+.cart__nav a{
+    background: var(--color-text);
+    color: var(--bg-block);
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-family: "Literata-r";
+
+}
+.cart__nav a:hover{
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+}
+/* ---------- */

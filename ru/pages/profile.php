@@ -9,53 +9,91 @@
 </head>
 <body>
 
-    <div class="wrapper profile">
-        <div class="profile__content">
-            <div class="profile__info">
-                <div class="profile__info-block">
-                    <h3 class="subtitle">Имя пользователя</h3>
-                    <?php
+    <div class="wrapper">
+        <div class="profile">
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <a href="cart.php">
+                        <li class="header__link">Корзина</li>
+                    </a>
+                    <a href="../index.php">
+                        <li class="header__link">Домой</li>
+                    </a>
+                </ul>
+                <div class="menu-burger">
+                    <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+                    <label for="burger-checkbox" class="burger" id="menu-burger"></label>
+                    <ul class="menu-burger-list" id="menu-burger-list">
+                        <div class="menu-burger-list-item">
+                            <li><a href="pages/cart.php" class="menu-burger-item header__link">Корзина</a><li>
+                            <li><a href="../index.php" class="menu-burger-item header__link">Домой</a><li>                            
+                        </div>
+                        <div class="menu-burger-media">
+                            <div>
+                                <a href="#" class="menu-burger-list-item">
+                                    <img src="../assets/image/telegram-w.png" alt="telegram" />
+                                </a>
+                                <a href="#" class="menu-burger-list-item">
+                                    <img src="../assets/image/vk-w.png" alt="vk" />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="header__link">
+                                    FAQ
+                                </a>
+                            </div>
+                        </div>
+                    </ul>
+                </div>                
+            </nav>
 
-                    include("../app/connect.php");
-                    session_start();
+            <div class="profile__content">
+                <div class="profile__info">
+                    <div class="profile__info-block">
+                        <h3 class="subtitle">Имя пользователя</h3>
+                        <?php
 
-                    $req = 'SELECT * FROM Users';
-                    $stmt = sqlsrv_query($connection, $req) or die(print_r(sqlsrv_errors(), true));
-                    $data = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+                        include("../app/connect.php");
+                        session_start();
 
-                    $sessionName = session_name();
-                    if(isset($_COOKIE[$sessionName]) || isset($_REQUEST[$sessionName])) {
-                        echo "<h2>" . $_SESSION['name'] . "</h2>";
-                    }
+                        $req = 'SELECT * FROM Users';
+                        $stmt = sqlsrv_query($connection, $req) or die(print_r(sqlsrv_errors(), true));
+                        $data = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
 
-                    ?>
+                        $sessionName = session_name();
+                        if(isset($_COOKIE[$sessionName]) || isset($_REQUEST[$sessionName])) {
+                            echo "<h2>" . $_SESSION['name'] . "</h2>";
+                        }
+
+                        ?>
+                    </div>
+                    <div class="profile__info-block">
+                        <h3 class="subtitle">E-mail</h3>
+                        <?php
+
+                        include("../app/connect.php");
+
+                        $sql = 'SELECT * FROM Users';
+                        $stmt = sqlsrv_query($connection, $sql) or die(print_r(sqlsrv_errors(), true));
+                        $data = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+
+                        $sessionName = session_name();
+                        if(isset($_COOKIE[$sessionName]) || isset($_REQUEST[$sessionName])) {
+                            echo "<h2>" . $_SESSION['email'] . "</h2>";
+                        }
+
+                        ?>
+                    </div>
                 </div>
-                <div class="profile__info-block">
-                    <h3 class="subtitle">E-mail</h3>
-                    <?php
-
-                    include("../app/connect.php");
-
-                    $sql = 'SELECT * FROM Users';
-                    $stmt = sqlsrv_query($connection, $sql) or die(print_r(sqlsrv_errors(), true));
-                    $data = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
-
-                    $sessionName = session_name();
-                    if(isset($_COOKIE[$sessionName]) || isset($_REQUEST[$sessionName])) {
-                        echo "<h2>" . $_SESSION['email'] . "</h2>";
-                    }
-
-                    ?>
+                <div class="profile__history">
+                    <h3 class="subtitle">История заказов</h2>
+                    <div class="profile__history-block"></div>
+                    <a class="logout subtitle" href="../app/logout.php">→Выйти из профиля</a>
                 </div>
-            </div>
-            <div class="profile__history">
-                <h3 class="subtitle">История заказов</h2>
-                <div class="profile__history-block"></div>
-                <a class="logout subtitle" href="../app/logout.php">Выйти из профиля</a>
             </div>
         </div>
-
     </div>
+    <script src="../assets/js/script.js"></script>
 
 </body>
 </html>

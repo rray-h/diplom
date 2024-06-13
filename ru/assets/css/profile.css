@@ -1,0 +1,54 @@
+/* Imports */
+@import url("variables.css");
+/* ---------- */
+
+/* Profile page styles */
+.profile{
+    padding: 15px 0;
+    background: var(--bg-block);
+}
+.profile nav{
+    display: flex;
+    justify-content: center;
+}
+.profile__content{
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+.profile__info-block{
+    margin: 40px 0 0 0;
+}
+.profile__info-block:not(:last-child){
+    margin-bottom: 30px;
+}
+.profile__info-block h2{
+    font-family: "Literata-b";
+    color: var(--color-text);
+    font-size: 36px;
+}
+.profile__history{
+    margin: 20px 0 20px 0;
+    font-family: "Literata-b";
+    font-size: 32px;
+    text-align: center;
+    color: var(--color-text);
+}
+.profile__history h3{
+    margin: 15px;
+}
+.profile__history-block{
+    width: 340px;
+    height: 340px;
+    background: var(--bg-color);
+    border-radius: 15px;
+} 
+.form__change input[type="submit"]:hover{
+    text-decoration: underline;
+}
+.logout:hover{
+    text-decoration: underline;
+}
+/* ---------- */

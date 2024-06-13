@@ -1,9 +1,12 @@
-const burger = document.querySelector('.header__burger');
-const lines = document.querySelectorAll('.burger__line');
 
-function toggleBurger() {
-  lines.forEach((line) => line.classList.toggle('active'));
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-burger");
+  const menuList = document.getElementById("menu-burger-list");
+  const html = document.documentElement;
 
-burger.addEventListener('click', toggleBurger);
+  menuToggle.addEventListener("click", () => {
+      menuList.classList.toggle("active");
+      html.classList.toggle("no-scroll");
+  });
 
+});

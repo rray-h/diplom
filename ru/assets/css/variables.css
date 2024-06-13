@@ -1,0 +1,10 @@
+/* Variables */
+:root{
+    --bg-color: #fe4f74;
+    --bg-block: linear-gradient(to bottom right, #181619, #2E2D2F); 
+    --bg-burger: linear-gradient(to bottom right, #181619, #302F31);
+    --bg-elements: #D85A6F;
+    --bg-stuff: #88323F;
+    --color-text: #FDDBE8;
+}
+/* ---------- */
